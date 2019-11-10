@@ -22,9 +22,7 @@ function Layout({ renderMain, renderSidebarBody, ...resProps }) {
       <>
         <Header />
         <Sidebar
-          renderBody={
-            (({ isSidebarOpened }) => renderSidebarBody({ ...resProps, isSidebarOpened }))
-          }
+          renderBody={renderSidebarBody}
         />
         <div
           className={classnames(classes.content, {

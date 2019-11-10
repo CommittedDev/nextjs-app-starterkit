@@ -49,6 +49,7 @@ function Sidebar({ renderBody }) {
       window.removeEventListener('resize', handleWindowWidthChange);
     };
   });
+  const Content = renderBody;
   return (
     <Drawer
       variant={isPermanent ? 'permanent' : 'temporary'}
@@ -76,7 +77,7 @@ function Sidebar({ renderBody }) {
         </IconButton>
       </div>
       <List className={classes.sidebarList}>
-        {renderBody({ isSidebarOpened })}
+        <Content isSidebarOpened={isSidebarOpened} />
       </List>
     </Drawer>
   );
