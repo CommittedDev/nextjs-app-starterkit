@@ -47,6 +47,7 @@ class MyApp extends App {
     const isRtl = i18n.dir() === 'rtl';
     if (process.browser) {
       document.getElementsByTagName('body')[0].dir = i18n.dir();
+      document.getElementsByTagName('body')[0].id = `nextjs-app-${i18n.dir()}`;
     }
     return (
       <React.Fragment>

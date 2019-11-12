@@ -115,7 +115,7 @@ class MyDocument extends Document {
             rel="apple-touch-startup-image"
           />
         </Head>
-        <body dir={i18n.dir()}>
+        <body dir={i18n.dir()} className="nextjs-app-body" id={`nextjs-app-${i18n.dir()}`}>
           <Main />
           <NextScript />
         </body>

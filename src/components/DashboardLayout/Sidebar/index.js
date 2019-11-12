@@ -70,6 +70,7 @@ function Sidebar({ renderBody }) {
       <div className={classes.mobileBackButton}>
         <IconButton onClick={() => toggleSidebar(layoutDispatch)}>
           <ArrowBackIcon
+            className="sideBarArrowBackBtn"
             classes={{
               root: classNames(classes.headerIcon, classes.headerIconCollapse),
             }}
