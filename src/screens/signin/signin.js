@@ -52,7 +52,7 @@ function SignIn({ actions, t }) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {t('signinScreenTitle')}
+          {t('title')}
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
           <TextField
@@ -61,7 +61,7 @@ function SignIn({ actions, t }) {
             required
             fullWidth
             id="email"
-            label={t('signinEmailAddress')}
+            label={t('emailFieldLabel')}
             name="email"
             autoComplete="email"
             autoFocus
@@ -75,7 +75,7 @@ function SignIn({ actions, t }) {
             required
             fullWidth
             name="password"
-            label={t('signinPassword')}
+            label={t('emailPasswordLabel')}
             type="password"
             id="password"
             autoComplete="current-password"
@@ -96,17 +96,17 @@ function SignIn({ actions, t }) {
             color="primary"
             className={classes.submit}
           >
-            {t('signinButton')}
+            {t('submitButton')}
           </Button>
           <Grid container>
             <Grid item xs>
               <Link href="/forgot-password">
-                <a><Typography component="span" variant="body2">{t('signinForgotPassword')}</Typography></a>
+                <a><Typography component="span" variant="body2">{t('forgotPasswordButton')}</Typography></a>
               </Link>
             </Grid>
             <Grid item>
               <Link href="/signup">
-                <a><Typography component="span" variant="body2">{t('signinDontHaveAnAccountSignUp')}</Typography></a>
+                <a><Typography component="span" variant="body2">{t('dontHaveAccountButton')}</Typography></a>
               </Link>
             </Grid>
           </Grid>

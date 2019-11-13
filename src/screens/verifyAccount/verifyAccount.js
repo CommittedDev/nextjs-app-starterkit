@@ -20,10 +20,9 @@ import Copyright from 'src/components/Copyright';
 import { withTranslation } from 'src/i18n';
 import { useRouter } from 'next/router';
 import useStyles from './styles';
-import { mainUserField } from '../../../siteConfig';
 
 const validationSchema = yup.object().shape({
-  [mainUserField]: mainUserField === 'email' ? yup.string().email().required() : yup.string().required(),
+  email: yup.string().email().required(),
 });
 
 function verifyAccount({ actions, t }) {
@@ -34,18 +33,16 @@ function verifyAccount({ actions, t }) {
   });
 
 
-  const emailIsMainField = mainUserField === 'email';
-
   const onSubmit = (values, e) => {
     e.preventDefault();
     const actionPayload = {
       values,
-      notificationMessage: emailIsMainField ? t('verifyEmailNotificationMessage') : t('verifyMobileNotificationMessage'),
+      notificationMessage: t('notificationMessageOnSuccess'),
     };
     actions.sendVerifyAccount(actionPayload);
   };
 
-  const valueFromParams = (emailIsMainField ? router.query.email : router.query.mobile) || '';
+  const valueFromParams = router.query.email || '';
 
   return (
     <Container component="main" maxWidth="xs">
@@ -54,11 +51,11 @@ function verifyAccount({ actions, t }) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {emailIsMainField ? t('verifyEmailAccountTitle') : t('verifyMobileAccountTitle')}
+          {t('title')}
         </Typography>
         <br />
         <Typography component="p">
-          {emailIsMainField ? t('verifyEmailText') : t('verifyMobileText')}
+          {t('subTitle')}
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
           <TextField
@@ -66,15 +63,15 @@ function verifyAccount({ actions, t }) {
             margin="normal"
             required
             fullWidth
-            id={emailIsMainField ? 'email' : 'mobile'}
-            label={emailIsMainField ? t('verifyEmailAccountTitle') : t('verifyMobileAccountTitle')}
-            name={emailIsMainField ? 'email' : 'mobile'}
+            id="email"
+            label={t('emailFieldLabel')}
+            name="email"
             defaultValue={valueFromParams}
-            autoComplete={emailIsMainField ? 'email' : 'mobile'}
+            autoComplete="email"
             autoFocus
             inputRef={register}
-            error={errors[mainUserField]}
-            helperText={errors[mainUserField] && errors[mainUserField].message}
+            error={errors.email}
+            helperText={errors.email && errors.email.message}
           />
           <Error errorType={ErrorTypes.VERIFY_ACCOUNT} />
           <Button
@@ -84,12 +81,12 @@ function verifyAccount({ actions, t }) {
             color="primary"
             className={classes.submit}
           >
-            {emailIsMainField ? t('verifyEmailButton') : t('verifyMobileButton')}
+            {t('submitButton')}
           </Button>
           <Grid container>
             <Grid item>
               <Link href="/signin">
-                <a><Typography component="span" variant="body2">{t('verifySigninButton')}</Typography></a>
+                <a><Typography component="span" variant="body2">{t('signinButtom')}</Typography></a>
               </Link>
             </Grid>
           </Grid>

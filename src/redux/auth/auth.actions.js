@@ -16,6 +16,7 @@ export const actionsType = {
   LOGIN: `${NAME_SPACE}/LOGIN`,
   REGISTER: `${NAME_SPACE}/REGISTER`,
   SEND_VERIFY_ACCOUNT: `${NAME_SPACE}/SEND_VERIFY_ACCOUNT`,
+  SEND_FORGOT_PASSWORD: `${NAME_SPACE}/SEND_FORGOT_PASSWORD`,
   ON_LOGIN_END: `${NAME_SPACE}/ON_LOGIN_END`,
   ON_REGISTER_END: `${NAME_SPACE}/ON_REGISTER_END`,
   SET_LOADING: `${NAME_SPACE}/SET_LOADING`,
@@ -50,7 +51,6 @@ export const onRegisterEnd = (token) => ({
  * @function login
  * @param {object} payload
  * @param {string} payload.email
- * @param {string} payload.mobile
  * @param {string} payload.password
  * @param {string} payload.nextRoute next route
  *
@@ -64,7 +64,6 @@ export const login = (payload) => ({
  * @function register
  * @param {object} payload
  * @param {string} payload.email
- * @param {string} payload.mobile
  * @param {string} payload.password
  * @param {string} payload.nextRoute next route
  *
@@ -89,11 +88,21 @@ export const onLogoutEnd = () => ({
  * @function sendVerifyAccount
  * @param {object} payload
  * @param {string} payload.email
- * @param {string} payload.mobile
  *
  */
 export const sendVerifyAccount = (payload) => ({
   type: actionsType.SEND_VERIFY_ACCOUNT,
+  payload,
+});
+
+/**
+ * @function sendForgotPassword
+ * @param {object} payload
+ * @param {string} payload.email
+ *
+ */
+export const sendForgotPassword = (payload) => ({
+  type: actionsType.SEND_FORGOT_PASSWORD,
   payload,
 });
 

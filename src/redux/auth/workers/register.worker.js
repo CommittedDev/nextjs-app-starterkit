@@ -12,17 +12,19 @@ import { startLoading, stopLoading, LoaderTypes } from '../../loaders';
 function* register(action) {
   const {
     values,
-    nextRoute, /* firstName, lastName */
+    nextRoute,
   } = action.payload;
-  const { email, password, mobile } = values;
+  const {
+    email, password, firstName, lastName,
+  } = values;
   try {
     yield put(startLoading({ loaderType: LoaderTypes.REGISTER }));
     let response = yield httpRequest(
       ApiService.createUser,
       email.trim().toLowerCase(),
       password.trim(),
-      /* firstName, lastName */
-      mobile,
+      firstName,
+      lastName,
     );
     if (
       (response.data.verifiedRequired && !response.data.isVerified)
@@ -32,13 +34,13 @@ function* register(action) {
         && !response.data.user.isVerified
       )
     ) {
-      Router.replace({ pathname: '/verify-account', query: { email, mobile } });
+      Router.replace({ pathname: '/verify-account', query: { email } });
       return;
     }
 
     if (!response.data.accessToken) {
       // When server is not auto login after sign up
-      response = yield httpRequest(ApiService.login, email, mobile, password);
+      response = yield httpRequest(ApiService.login, email, password);
     }
     const { accessToken, user } = response.data;
     setToken(accessToken);

@@ -1,12 +1,10 @@
 {
   "screenName": "verifyAccount",
-  "verifyEmailAccountTitle": "אימות אימייל",
-  "verifyMobileAccountTitle": "אימות טלפון",
-  "verifyEmailButton": "שלח אימייל מחדש",
-  "verifyMobileButton": "שלח הודעת טקסט מחדש",
+  "title": "אימות אימייל",
+  "emailFieldLabel": "אימות טלפון",
+  "submitButton": "שלח אימייל מחדש",
   "verifyEmailText": "אנא בדוק בתיבת האימייל שלך את האימייל שכרגע שלחנו לך",
-  "verifyMobileText": "אנא בדוק את הלינק ששלחנו לך כרגע בהודעת טקסט",
-  "verifyEmailNotificationMessage": "אימייל נשלח בהצלחה",
-  "verifyMobileNotificationMessage": "הודעת טקסט נשלחה בהצלחה",
-  "verifySigninButton": "כניסה"
+  "subTitle": "אנא בדוק את הלינק ששלחנו לך כרגע בהודעת טקסט",
+  "notificationMessageOnSuccess": "אימייל נשלח בהצלחה",
+  "signinButtom": "כניסה"
 }

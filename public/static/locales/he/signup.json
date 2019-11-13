@@ -1,13 +1,13 @@
 {
   "screenName": "signup",
-  "signupScreenTitle": "הרשמה",
-  "signupFirstName": "שם פרטי",
-  "signupLastName": "שם משפחה",
-  "signupEmailAddress": "דואר אלקטרוני",
-  "signupPassword": "סיסמא",
+  "title": "הרשמה",
+  "firstNameFieldLabel": "שם פרטי",
+  "lastNameFieldLabel": "שם משפחה",
+  "emailFieldLabel": "דואר אלקטרוני",
+  "passwordFieldLabel": "סיסמא",
   "signupRememberMe": "זכור אותי",
-  "signupButton": "הרשמה",
+  "submitButton": "הרשמה",
   "signupConfirm": "אני מעוניין לקבל עדכונים לאימייל שלי",
-  "signupSigninButton": "כניסה",
-  "signupHaveAnAccount": "יש לך כבר חשבון? כניסה"
+  "signupsubmitButton": "כניסה",
+  "haveAnAccount": "יש לך כבר חשבון? כניסה"
 }

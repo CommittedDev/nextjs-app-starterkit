@@ -1,10 +1,10 @@
 {
   "screenName": "signin",
-  "signinScreenTitle": "כניסה",
-  "signinEmailAddress": "דואר אלקטרוני",
-  "signinPassword": "סיסמא",
+  "title": "כניסה",
+  "emailFieldLabel": "דואר אלקטרוני",
+  "emailPasswordLabel": "סיסמא",
   "signinRememberMe": "זכור אותי",
-  "signinButton": "כניסה",
-  "signinForgotPassword": "שכחת סיסמא?",
-  "signinDontHaveAnAccountSignUp": "עדיין אין לך חשבון ? הרשמה"
+  "submitButton": "כניסה",
+  "forgotPasswordButton": "שכחת סיסמא?",
+  "dontHaveAccountButton": "עדיין אין לך חשבון ? הרשמה"
 }

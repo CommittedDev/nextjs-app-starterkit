@@ -1,8 +1,5 @@
 module.exports = {
-  otherLanguages: ['he'],
-  localeSubpaths: {
-    en: 'en',
-    he: 'he',
-  },
+  otherLanguages: ['en', 'he'],
+  defaultLanguage: 'en',
   localePath: typeof window === 'undefined' ? 'public/static/locales' : 'static/locales',
 };

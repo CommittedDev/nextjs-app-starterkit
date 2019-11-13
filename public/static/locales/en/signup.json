@@ -1,13 +1,13 @@
 {
   "screenName": "signup",
-  "signupScreenTitle": "Sign Up",
-  "signupFirstName": "First Name",
-  "signupLastName": "Last Name",
-  "signupEmailAddress": "Email Address",
-  "signupPassword": "Password",
+  "title": "Sign Up",
+  "firstNameFieldLabel": "First Name",
+  "lastNameFieldLabel": "Last Name",
+  "emailFieldLabel": "Email Address",
+  "passwordFieldLabel": "Password",
   "signupRememberMe": "Remember Me",
-  "signupButton": "Sign Up",
+  "submitButton": "Sign Up",
   "signupConfirm": "I want to receive inspiration, marketing promotions and updates via email.",
-  "signupHaveAnAccount": "Already have an account? Sign in",
-  "signupSigninButton": "Sign Up"
+  "haveAnAccount": "Already have an account? Sign in",
+  "signupsubmitButton": "Sign Up"
 }

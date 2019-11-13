@@ -17,7 +17,6 @@ function* signIn(action) {
     const response = yield httpRequest(
       ApiService.login,
       values.email.trim().toLowerCase(),
-      values.mobile,
       values.password.trim(),
     );
     const { accessToken, user } = response.data;

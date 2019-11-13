@@ -52,7 +52,7 @@ function SignUp({ actions, t }) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {t('signupScreenTitle')}
+          {t('title')}
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2}>
@@ -62,7 +62,7 @@ function SignUp({ actions, t }) {
                 variant="outlined"
                 fullWidth
                 id="firstName"
-                label={t('signupFirstName')}
+                label={t('firstNameFieldLabel')}
                 autoFocus
                 inputRef={register}
                 error={errors.firstName}
@@ -74,7 +74,7 @@ function SignUp({ actions, t }) {
                 variant="outlined"
                 fullWidth
                 id="lastName"
-                label={t('signupLastName')}
+                label={t('lastNameFieldLabel')}
                 name="lastName"
                 inputRef={register}
                 error={errors.lastName}
@@ -88,7 +88,7 @@ function SignUp({ actions, t }) {
             required
             fullWidth
             id="email"
-            label={t('signupEmailAddress')}
+            label={t('emailFieldLabel')}
             name="email"
             autoComplete="email"
             inputRef={register}
@@ -101,7 +101,7 @@ function SignUp({ actions, t }) {
             required
             fullWidth
             name="password"
-            label={t('signupPassword')}
+            label={t('passwordFieldLabel')}
             type="password"
             id="password"
             autoComplete="new-password"
@@ -121,12 +121,12 @@ function SignUp({ actions, t }) {
             color="primary"
             className={classes.submit}
           >
-            {t('signupButton')}
+            {t('submitButton')}
           </Button>
           <Grid container>
             <Grid item>
               <Link href="/signin">
-                <a><Typography component="span" variant="body2">{t('signupHaveAnAccount')}</Typography></a>
+                <a><Typography component="span" variant="body2">{t('haveAnAccount')}</Typography></a>
               </Link>
             </Grid>
           </Grid>

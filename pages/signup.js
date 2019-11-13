@@ -7,7 +7,7 @@ export default Page({
   loginRequired: false,
   logoutRequired: true,
   adminRequired: false,
-  i18n: ['signup', 'common'],
+  i18n: ['signup'],
   showLocalButton: true,
   displayName: 'SignupPage',
 })(() => (

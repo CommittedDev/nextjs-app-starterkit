@@ -68,13 +68,13 @@ export default class ApiService {
   }
 
   // Auth
-  static createUser(email, mobile, password, firstName, lastName) {
+  static createUser(email, password, firstName, lastName) {
     return axios.request({
       baseURL: SERVER_URL,
       url: END_POINTS.createUser.url,
       method: METHODS.POST,
       data: {
-        email, mobile, password, firstName, lastName,
+        email, password, firstName, lastName,
       },
     });
   }
@@ -90,28 +90,29 @@ export default class ApiService {
     });
   }
 
-  static login(email, mobile, password) {
+  static login(email, password) {
     return axios.request({
       baseURL: SERVER_URL,
       url: END_POINTS.login.url,
       method: METHODS.POST,
       data: {
-        email, mobile, password, strategy: 'local',
+        email, password, strategy: 'local',
       },
     });
   }
 
-  static resendVerifyAccount(email, mobile) {
+  static resendVerifyAccount(email) {
     return axios.request({
       baseURL: SERVER_URL,
       url: END_POINTS.resendVerifyAccount.url,
       method: METHODS.POST,
       data: {
         action: 'resendVerifySignup',
-        value: { email, mobile },
+        value: { email },
       },
     });
   }
+
 
   static passwordChange(email, oldPassword, password) {
     return axios.request({

@@ -20,7 +20,12 @@ export default function loadersReducer(state = initialState, action) {
     }
     case actionsType.STOP_LOADING: {
       const nextState = produce(state, (draftState) => {
-        draftState[loaderType] = { status: null, error: (error ? (error.message || error) : null) };
+        // eslint-disable-next-line no-underscore-dangle
+        const _error = (error ? (error.message || error) : null);
+        draftState[loaderType] = {
+          status: _error ? LoaderStatus.ERROR : LoaderStatus.END,
+          error: _error,
+        };
       });
       return nextState;
     }

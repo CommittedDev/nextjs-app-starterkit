@@ -7,8 +7,11 @@ export const LoaderTypes = {
   LOGIN: 'LOGIN',
   REGISTER: 'REGISTER',
   VERIFY_ACCOUNT: 'VERIFY_ACCOUNT',
+  FORGOT_PASSWORD: 'FORGOT_PASSWORD',
 };
 
 export const LoaderStatus = {
   LOADING: 'LOADING',
+  END: 'END',
+  ERROR: 'ERROR',
 };

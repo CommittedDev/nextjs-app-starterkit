@@ -1,4 +1,5 @@
 import { call } from 'redux-saga/effects';
+import getLocalMessages from 'src/i18n/serverMessages';
 import logger from '../logger';
 
 const getErrorMessage = (error, errorText, defaultErrorMessage) => {
@@ -20,6 +21,7 @@ export default function* httpRequest(...params) {
     return res;
   } catch (error) {
     logger.error('Network request failed', error);
-    throw new Error(getErrorMessage(error));
+    const errorMessage = getLocalMessages(getErrorMessage(error));
+    throw new Error(errorMessage);
   }
 }

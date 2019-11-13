@@ -7,4 +7,11 @@ export const getIsLoadingByType = (state, loaderType) => {
   return isLoading;
 };
 
+export const getIsEndByType = (state, loaderType) => {
+  const isLoading = getLoadersState(state)[loaderType].status === LoaderStatus.END;
+  return isLoading;
+};
+
+export const getStatusByType = (state, loaderType) => getLoadersState(state)[loaderType].status;
+
 export const getErrorByType = (state, loaderType) => getLoadersState(state)[loaderType].error;
