@@ -2,12 +2,11 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import { Drawer, IconButton, List } from '@material-ui/core';
-import {
-  ArrowBack as ArrowBackIcon,
-} from '@material-ui/icons';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { useTheme } from '@material-ui/styles';
 import classNames from 'classnames';
-
+import { i18n } from 'src/i18n';
 // styles
 import useStyles from './styles';
 
@@ -50,6 +49,8 @@ function Sidebar({ renderBody }) {
     };
   });
   const Content = renderBody;
+  const isRtl = i18n.dir() === 'rtl';
+  const BackIcon = isRtl ? ArrowForwardIcon : ArrowBackIcon;
   return (
     <Drawer
       variant={isPermanent ? 'permanent' : 'temporary'}
@@ -64,12 +65,11 @@ function Sidebar({ renderBody }) {
         }),
       }}
       open={isSidebarOpened}
-    // anchor={irRtl ? 'right' : 'left'}
     >
       <div className={classes.toolbar} />
       <div className={classes.mobileBackButton}>
         <IconButton onClick={() => toggleSidebar(layoutDispatch)}>
-          <ArrowBackIcon
+          <BackIcon
             className="sideBarArrowBackBtn"
             classes={{
               root: classNames(classes.headerIcon, classes.headerIconCollapse),

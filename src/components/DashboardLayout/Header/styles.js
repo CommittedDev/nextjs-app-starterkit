@@ -30,6 +30,9 @@ export default makeStyles((theme) => ({
   },
   grow: {
     flexGrow: 1,
+    display: 'flex',
+    justifyContent: 'CENTER',
+    alignItems: 'center',
   },
   search: {
     position: 'relative',

@@ -2,13 +2,12 @@ import React from 'react';
 import useForm from 'react-hook-form';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
-import Avatar from '@material-ui/core/Avatar';
+import Logo from 'src/components/Logo';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Link from 'next/link';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import { connect } from 'react-redux';
@@ -48,9 +47,7 @@ function forgotPassword({ actions, t }) {
   return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+        <Logo />
         <Typography component="h1" variant="h5">
           {t('title')}
         </Typography>

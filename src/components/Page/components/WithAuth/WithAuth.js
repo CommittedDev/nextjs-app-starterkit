@@ -17,6 +17,7 @@ import { isOnline } from 'src/redux/global/global.selectors';
 import { getToken as getTokenFromStorage } from 'src/services/userToken';
 import { ROUTES } from 'src/enums';
 import logger from 'src/services/logger';
+import Loader from 'src/components/Loader';
 
 
 export default function withAuth(
@@ -119,8 +120,8 @@ export default function withAuth(
 
     render() {
       const { displayRedirect, checkAbilityEnd } = this.state;
-      if (displayRedirect) return 'Redirect...';
-      if (!checkAbilityEnd) return 'Loading...';
+      if (displayRedirect) return <Loader isLoading fullScreen />; // 'Redirect...';
+      if (!checkAbilityEnd) return <Loader isLoading fullScreen />; // 'Loading...';
       return (
         <React.Fragment>
           <BaseComponent {...this.props} />

@@ -20,9 +20,3 @@ input[type=number]::-webkit-outer-spin-button {
   --distanceFromTopList: 215px !important;
   --distanceFromTopDoc: 145px !important;
 }
-
-#nextjs-app-rtl {
-  .sideBarArrowBackBtn {
-    transform: rotate(180deg);
-  }
-}
